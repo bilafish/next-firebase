@@ -4,7 +4,6 @@ import { UserContext } from "../helpers/context";
 // Top navbar
 export default function Navbar() {
   const { user, username } = useContext(UserContext);
-
   return (
     <nav className="navbar">
       <ul>
