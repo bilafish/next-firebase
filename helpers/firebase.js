@@ -46,3 +46,6 @@ export function postToJSON(doc) {
     updatedAt: data.updatedAt.toMillis(),
   };
 }
+
+// Function used to convert a Firestore timestamp to number
+export const fromMillis = firebase.firestore.Timestamp.fromMillis;
