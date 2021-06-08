@@ -49,3 +49,5 @@ export function postToJSON(doc) {
 
 // Function used to convert a Firestore timestamp to number
 export const fromMillis = firebase.firestore.Timestamp.fromMillis;
+// The server timestamp ensures data time-based data will be consistent for all users.
+export const serverTimestamp = firebase.firestore.FieldValue.serverTimestamp;
