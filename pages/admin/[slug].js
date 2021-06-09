@@ -1,7 +1,7 @@
 import styles from "../../styles/Admin.module.css";
 import AuthCheck from "../../components/AuthCheck";
 import { firestore, auth, serverTimestamp } from "../../helpers/firebase";
-
+import ImageUploader from "../../components/ImageUploader";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -39,7 +39,7 @@ function PostManager() {
           <section>
             <h1>{post.title}</h1>
             <p>ID: {post.slug}</p>
-
+            <ImageUploader />
             <PostForm
               postRef={postRef}
               defaultValues={post}
