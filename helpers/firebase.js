@@ -54,3 +54,5 @@ export function postToJSON(doc) {
 export const fromMillis = firebase.firestore.Timestamp.fromMillis;
 // The server timestamp ensures data time-based data will be consistent for all users.
 export const serverTimestamp = firebase.firestore.FieldValue.serverTimestamp;
+// Allows to increase the count on a document
+export const increment = firebase.firestore.FieldValue.increment;

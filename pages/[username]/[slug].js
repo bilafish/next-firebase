@@ -6,6 +6,9 @@ import {
   postToJSON,
 } from "../../helpers/firebase";
 import { useDocumentData } from "react-firebase-hooks/firestore";
+import AuthCheck from "../../components/AuthCheck";
+import HeartButton from "../../components/HeartButton";
+import Link from "next/link";
 
 export async function getStaticProps({ params }) {
   const { username, slug } = params;
@@ -59,6 +62,15 @@ export default function Post({ post, path }) {
         <p>
           <strong>{postToDisplay.heartCount || 0} 🤍</strong>
         </p>
+        <AuthCheck
+          fallback={
+            <Link href="/enter">
+              <button>💗 Sign Up</button>
+            </Link>
+          }
+        >
+          <HeartButton postRef={postRef} />
+        </AuthCheck>
       </aside>
     </main>
   );
